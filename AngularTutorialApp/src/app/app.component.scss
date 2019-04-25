@@ -1,0 +1,12 @@
+.layout-container {
+   display:flex;
+   flex-direction: row; 
+}
+
+.layout-menu {
+    flex-grow: 1;
+}
+
+.layout-router {
+    flex-grow: 6;
+}
