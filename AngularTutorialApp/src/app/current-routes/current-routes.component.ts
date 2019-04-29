@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransitService } from '../transit-service/transit.service';
+import { ProviderOperation } from '../models/provider-operation';
+import { Observable, combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-current-routes',
@@ -8,15 +10,17 @@ import { TransitService } from '../transit-service/transit.service';
 })
 export class CurrentRoutesComponent implements OnInit {
 
-  // tslint:disable-next-line:align
-  public result: any;
+
+  public routesObservable$: Observable<ProviderOperation[]>;
 
   constructor(private tService: TransitService) { }
 
   ngOnInit() {
-    this.tService.GetProviderOperations().subscribe(result => {
-      this.result = result;
-    });
-  }
+    this.routesObservable$ = this.tService.GetRoutes();
 
+    this.routesObservable$.subscribe((routes: ProviderOperation[]) => {
+      console.log('do something here');
+    });
+
+  }
 }
