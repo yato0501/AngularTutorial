@@ -9,15 +9,10 @@ import { DebugRenderer2 } from '@angular/core/src/view/services';
 })
 export class AppComponent implements OnInit {
   title = 'AngularTutorialApp';
-  public result: any;
 
-  constructor(private tService: TransitService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.tService.GetProviderOperations().subscribe(result => {
-      this.result = result;
-
-    });
   }
 }

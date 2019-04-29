@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TransitService {
-  private getProviderOperationsUrl = 'http://svc.metrotransit.org/NexTrip/Providers';
+  private getProviderOperationsUrl = 'http://svc.metrotransit.org/NexTrip/Routes';
 
   constructor(private http: HttpClient) { }
 
