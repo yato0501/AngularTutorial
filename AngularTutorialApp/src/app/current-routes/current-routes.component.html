@@ -1,4 +1,4 @@
 <p>
-  <div *ngFor="let result of routesObservable$ | async">
-    <span>{{result.Description}}</span>
+  <div *ngFor="let result of displayVM">
+    <span>{{result.ProviderName}} - {{result.RouteDescription}}</span>
   </div>
