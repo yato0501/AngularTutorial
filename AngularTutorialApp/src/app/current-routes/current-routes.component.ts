@@ -12,15 +12,22 @@ export class CurrentRoutesComponent implements OnInit {
 
 
   public routesObservable$: Observable<ProviderOperation[]>;
+  public providers$: Observable<any>;
+  public vehicleDirection$: Observable<any>;
+  public vehicleLocation$: Observable<any>;
 
   constructor(private tService: TransitService) { }
 
   ngOnInit() {
     this.routesObservable$ = this.tService.GetRoutes();
+    this.providers$ = this.tService.GetProviders();
 
-    this.routesObservable$.subscribe((routes: ProviderOperation[]) => {
-      console.log('do something here');
+    combineLatest(this.routesObservable$, this.providers$).subscribe(result => {
+      let routes = result[0];
+      let providers = result[1];
     });
+
+
 
   }
 }

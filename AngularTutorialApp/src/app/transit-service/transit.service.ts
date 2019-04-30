@@ -7,8 +7,10 @@ import { ProviderOperation } from '../models/provider-operation';
   providedIn: 'root'
 })
 export class TransitService {
-  private getRoutesUrl = 'http://svc.metrotransit.org/NexTrip/Routes';
-  private getVehicleLocations = 'http://svc.metrotransit.org/NexTrip/VehicleLocations/{ROUTE}';
+  public getRoutesUrl = 'http://svc.metrotransit.org/NexTrip/Routes';
+  public getVehicleLocationsUrl = 'http://svc.metrotransit.org/NexTrip/VehicleLocations/{ROUTE}';
+  public getDirectionUrl = 'http://svc.metrotransit.org/NexTrip/Directions/{ROUTE}';
+  public getProviderUrl = 'http://svc.metrotransit.org/NexTrip/Providers';
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +19,16 @@ export class TransitService {
   }
 
   public GetVehicleLocations(route: string): Observable<any> {
-    const url = this.getVehicleLocations.replace('{ROUTE}', route);
+    const url = this.getVehicleLocationsUrl.replace('{ROUTE}', route);
     return this.http.get<any>(url);
+  }
+
+  public GetDirection(route: string): Observable<any> {
+    const url = this.getDirectionUrl.replace('{ROUTE}', route);
+    return this.http.get<any>(url);
+  }
+
+  public GetProviders(): Observable<any> {
+    return this.http.get<any>(this.getProviderUrl);
   }
 }
