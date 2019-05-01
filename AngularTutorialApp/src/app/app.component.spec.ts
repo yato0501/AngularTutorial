@@ -1,15 +1,24 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
 
 describe('AppComponent', () => {
+
+  @Component({
+    selector: 'current-routes',
+    template: '<p>Mock Product Settings Component</p>'
+  })
+  class MockProductSettingsComponent {}
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        MockProductSettingsComponent
       ],
     }).compileComponents();
   }));
