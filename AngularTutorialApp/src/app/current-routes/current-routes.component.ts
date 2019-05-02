@@ -16,7 +16,7 @@ export class CurrentRoutesComponent implements OnInit {
   private providers$: Observable<any>;
   private vehicleDirection$: Observable<any>;
   private vehicleLocation$: Observable<any>;
-  public displayVM: any;
+  public displayVM: any = null;
 
 
   constructor(private tService: TransitService) {

@@ -11,7 +11,6 @@ describe('TransitService', () => {
     TestBed.configureTestingModule({providers: [
       { provide: HttpClient, useValue: mockHttpClient }
     ]});
-
   });
 
   it('should be created', () => {
