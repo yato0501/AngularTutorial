@@ -5,7 +5,6 @@ import { TransitService } from '../transit-service/transit.service';
 import { of } from 'rxjs';
 import { Output, Component, EventEmitter } from '@angular/core';
 import { ProviderOperation } from '../models/provider-operation';
-import { assertNotNull } from '@angular/compiler/src/output/output_ast';
 
 describe('CurrentRoutesComponent', () => {
   let component: CurrentRoutesComponent;
@@ -24,8 +23,6 @@ describe('CurrentRoutesComponent', () => {
     // debugger;
     // creating the mock object
     mockTService = jasmine.createSpyObj('TransitService', ['GetRoutes', 'GetProviders']);
-
-    // mocking a call
 
     // configuring the component we are testing and injecting the required stuff.
     TestBed.configureTestingModule({

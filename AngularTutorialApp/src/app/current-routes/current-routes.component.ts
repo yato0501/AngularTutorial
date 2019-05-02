@@ -11,13 +11,11 @@ import { containsTree } from '@angular/router/src/url_tree';
 })
 export class CurrentRoutesComponent implements OnInit {
 
-
   private routesObservable$: Observable<ProviderOperation[]>;
   private providers$: Observable<any>;
   private vehicleDirection$: Observable<any>;
   private vehicleLocation$: Observable<any>;
   public displayVM: any = null;
-
 
   constructor(private tService: TransitService) {
   }
