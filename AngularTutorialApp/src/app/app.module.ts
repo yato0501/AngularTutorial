@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CurrentRoutesComponent } from './current-routes/current-routes.component';
+import { ButtonComponent } from './shared/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CurrentRoutesComponent
+    CurrentRoutesComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

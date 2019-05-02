@@ -19,9 +19,13 @@ export class CurrentRoutesComponent implements OnInit {
   public displayVM: any;
 
 
-  constructor(private tService: TransitService) { }
+  constructor(private tService: TransitService) {
+  }
 
   ngOnInit() {
+  }
+
+  displayRoute() {
     this.routesObservable$ = this.tService.GetRoutes();
     this.providers$ = this.tService.GetProviders();
 
@@ -58,6 +62,5 @@ export class CurrentRoutesComponent implements OnInit {
         }
       });
     });
-
   }
 }
