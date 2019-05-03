@@ -11,6 +11,9 @@ describe('CurrentRoutesComponent', () => {
   let fixture: ComponentFixture<CurrentRoutesComponent>;
   let mockTService;
 
+
+
+  // you must include a mock of all the components that you are using in the 
   @Component({
     selector: 'app-button',
     template: '<div></div>'
@@ -20,7 +23,6 @@ describe('CurrentRoutesComponent', () => {
    }
 
   beforeEach(async(() => {
-    // debugger;
     // creating the mock object
     mockTService = jasmine.createSpyObj('TransitService', ['GetRoutes', 'GetProviders']);
 
@@ -65,6 +67,7 @@ describe('CurrentRoutesComponent', () => {
       {Text: 'numba 10', Value: '10'},
       {Text: 'numba 11', Value: '11'}
     ];
+
 
     mockTService.GetRoutes.and.returnValue(of(routes));
     mockTService.GetProviders.and.returnValue(of(providers));
