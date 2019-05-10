@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrentRoutesComponent } from './current-routes/current-routes.component';
 import { ButtonComponent } from './shared/button/button.component';
+import { GetProviderComponent } from './get-provider/get-provider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrentRoutesComponent,
-    ButtonComponent
+    ButtonComponent,
+    GetProviderComponent
   ],
   imports: [
     BrowserModule,

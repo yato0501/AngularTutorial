@@ -1,0 +1,5 @@
+<p>
+   <app-button (btnClickEvt)="displayProvider()"></app-button>
+  <div *ngFor="let result of providers$ | async">
+    <span>{{result.Text}}</span>
+  </div>

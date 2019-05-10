@@ -13,7 +13,7 @@ describe('CurrentRoutesComponent', () => {
 
 
 
-  // you must include a mock of all the components that you are using in the 
+  // you must include a mock of all the components that you are using in the actual component
   @Component({
     selector: 'app-button',
     template: '<div></div>'
